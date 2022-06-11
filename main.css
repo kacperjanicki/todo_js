@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#container{
+    display: grid;
+    gap:20px;
+    grid-template-columns: 20vw 80vw;
+}
+#sidebar{
+    background-color: rgb(172, 222, 255);
+    height: 100vh;
+}
+#sidebar>ul{
+    list-style-type: none;
+    color:rgb(48, 48, 48);
+    font-size: 30px;
+
+}
+fieldset{
+    padding: 20px;
+}
+.item{
+    line-height: 0.5;
+}
+.delete{
+    background: none;
+    cursor: pointer;
+    height: 20px;
+}
+.delete:hover{
+    background-color: red;
+}
