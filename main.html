@@ -11,12 +11,12 @@
     <div id="container">
         <div id="sidebar">
             <ul>
-                <li>Main panel</li>
-                <li>Tasks</li>
-                
+                <li><button class="btn btn--active" data-for-tab="1">Main page</button></li>
+                <li><button class="btn" id="all" data-for-tab="2">All tasks</button></li>
             </ul>
         </div>
-        <div id="main">
+        
+        <div class="tabs_content tabs_content--active " data-tab="1">
             <h1>Todo app</h1>
             <fieldset>
                 <legend>Add a todo</legend>
@@ -24,8 +24,12 @@
                 <label for="desc">Description: </label><input type="text" name="desc" id="desc" placeholder="additional data"></input><br>
                 <button type="submit" id="add">Add</button>
             </fieldset>
-            
+            <button class="btn_view" id="view"></button>
         </div>
+        <div class="tabs_content" id="main" data-tab="2">
+            <h1>Todo app</h1>
+        </div>
+
     </div>
     <script src="main.js"></script>
 </body>

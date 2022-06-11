@@ -49,6 +49,11 @@ const mainfunc = ()=>{
         console.log(divToDel)
         fieldset.remove(divToDel)
     }))
+    const view_btn = document.querySelector(".btn_view")
+    view_btn.textContent = 'Your todo has been added click to view it here'
+    view_btn.addEventListener('click',()=>{
+        document.querySelector('#all').click()
+    })
 }
 
 
@@ -58,6 +63,31 @@ description.addEventListener('keypress',(event)=>{
         mainfunc()
     }
 })
+
+function tabsSwitch(){
+    document.querySelectorAll(".btn").forEach(button => {
+        button.addEventListener('click',() => {
+            const sidebar = button.parentElement
+            const tabsContainer = sidebar.parentElement
+            const tabsNum = button.dataset['forTab']
+            const tabToActivate = document.querySelector(`.tabs_content[data-tab="${tabsNum}"]`)
+
+            sidebar.querySelectorAll('.btn').forEach(button=>{
+                button.classList.remove('btn--active')
+            })
+            document.querySelectorAll('.tabs_content').forEach(tab=>{
+                tab.classList.remove('tabs_content--active')
+            })
+            button.classList.add('btn--active')
+            tabToActivate.classList.add('tabs_content--active')
+        })
+    })
+}
+document.addEventListener("DOMContentLoaded",()=>{
+    tabsSwitch()
+    
+})
+
 
 
 
